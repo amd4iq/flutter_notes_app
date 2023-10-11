@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:notes/screens/add_note.dart';
+import 'package:notes/screens/home.dart';
+import 'package:notes/screens/settings.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -17,22 +20,13 @@ class _MainPageState extends State<MainPage> {
   }
 
   static final List<Widget> _pageList = <Widget>[
-    const Center(
-      child: Text('Home'),
-    ),
-    const Center(
-      child: Text('Add Note'),
-    ),
-    const Center(
-      child: Text('Settings'),
-    ),
+    const NoteHomeScreen(),
+    const AddNoteScreen(),
+    const SettingsScreen(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Notes'),
-      ),
       body: SafeArea(
         top: true,
         left: true,
