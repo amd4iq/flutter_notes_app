@@ -12,7 +12,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        right: 25,
+        right: 20,
         left: 20,
       ),
       child: Row(

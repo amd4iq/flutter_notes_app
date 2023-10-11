@@ -10,6 +10,18 @@ class AddNoteScreen extends StatefulWidget {
 class _AddNotePageScreenState extends State<AddNoteScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          backgroundColor: Colors.blueGrey,
+          title: Text(
+            'Add Note',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          expandedHeight: 200,
+        ),
+        SliverToBoxAdapter()
+      ],
+    );
   }
 }

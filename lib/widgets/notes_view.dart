@@ -14,7 +14,7 @@ class _NotesListState extends State<NotesList> {
     return ListView.builder(
         itemCount: 2,
         itemBuilder: (context, index) {
-          return NoteTile();
+          return const NoteTile();
         });
   }
 }
