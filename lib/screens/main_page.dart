@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainPageState extends State<MainPage> {
   int _slectedIndex = 0;
+
+  void _setSelectedIndex(int index) {
+    setState(() {
+      _slectedIndex = index;
+    });
+  }
 
   static final List<Widget> _pageList = <Widget>[
     const Center(
@@ -35,12 +41,10 @@ class _HomePageState extends State<HomePage> {
         child: _pageList[_slectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.blue,
         currentIndex: _slectedIndex,
-        onTap: (int index) {
-          setState(() {
-            _slectedIndex = index;
-          });
-        },
+        type: BottomNavigationBarType.fixed,
+        onTap: _setSelectedIndex,
         items: [
           BottomNavigationBarItem(
             icon: Icon(
